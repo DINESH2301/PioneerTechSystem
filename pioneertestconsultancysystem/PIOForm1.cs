@@ -59,10 +59,7 @@ namespace pioneertestconsultancysystem
             {
                 MessageBox.Show("error occured:" +ex.Message);
             }
-            finally
-            {
-
-            }
+            
         }
 
 
@@ -91,50 +88,50 @@ namespace pioneertestconsultancysystem
                 var Contactnumber = Convert.ToInt64(contactnumbertextbox.Text);
                 string Location = LocationtextBox.Text;
                 string Website = Websitetextbox.Text;
-                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                EmployeeDataAcessLayer objcompanydetails = new EmployeeDataAcessLayer();
+                objcompanydetails.SaveCompany(EmployeeID, Employeename, Contactnumber, Location, Website);
+                /*string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
                 mysqlconnection.Open();
                 string COMMAND = "INSERT INTO COMPANY_DETAILS(EmployeeID,Employeename,contactnumber,Location,Website)VALUES("+EmployeeID+","+"'"+Employeename+"',"+Contactnumber+","+"'"+Location+"',"+"'"+Website+"')";
                 SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
                 cmd.ExecuteNonQuery();
-                mysqlconnection.Close();
+                mysqlconnection.Close();*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-            }
+            
         }
 
         private void Savebutton5_Click(object sender, EventArgs e)
         {
             try
             {
+                int ProjectID = Convert.ToInt32(ProjectIDtextBox.Text);
                 int EmployeeID = Convert.ToInt32(EmployeeID1textbox.Text);
                 string ProjectName = ProjectNametextbox.Text;
                 string ClientName = Clientnametextbox.Text;
                 string Location = Location1textbox.Text;
                 string Role = Roletextbox.Text;
-                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                EmployeeDataAcessLayer objprojectdetails = new EmployeeDataAcessLayer();
+                objprojectdetails.SaveProject(ProjectID, EmployeeID, ProjectName, ClientName, Location, Role);
+                /*string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
                 mysqlconnection.Open();
-                string COMMAND = "INSERT INTO PROJECTDETAILS(EmployeeID,ProjectName,ClientName,Location,Role)VALUES(" + EmployeeID + "," + "'" + ProjectName + "'," + "'" + ClientName + "'," + "'" + Location + "'," + "'" + Role + "')";
+                string COMMAND = "INSERT INTO PROJECTDETAILS(ProjectID,EmployeeID,ProjectName,ClientName,Location,Role)VALUES("+ProjectID+","+""+ EmployeeID + "," + "'" + ProjectName + "'," + "'" + ClientName + "'," + "'" + Location + "'," + "'" + Role + "')";
                 SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
                 cmd.ExecuteNonQuery();
-                mysqlconnection.Close();
+                mysqlconnection.Close();*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-
-            }
+            
         }
 
 
@@ -148,26 +145,26 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                string EmployeeID = EmployeeID5textbox.Text;
+                int EmployeeID = Convert.ToInt32(EmployeeID5textbox.Text);
                 string UI = UItextbox.Text;
                 string Programminglanguages = programminglanguagestextbox.Text;
                 string ORMTechnologies = ORMtechnologiestextbox.Text;
                 string Databases = databasestextBox.Text;
-                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                EmployeeDataAcessLayer objtechnicaldetails = new EmployeeDataAcessLayer();
+                objtechnicaldetails.SaveTechnical(EmployeeID, UI, Programminglanguages, ORMTechnologies, Databases);
+               /* string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
                 mysqlconnection.Open(); string COMMAND = "INSERT INTO TECHNICALDETAILS(EmployeeID,UI,ProgrammingLanguages,ORMTechnologies,Databases)VALUES(" +EmployeeID+","+"'" + UI + "',"+"'"+Programminglanguages+"',"+"'" +ORMTechnologies +"',"+"'"+Databases+"')";
                 SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
                 cmd.ExecuteNonQuery();
-                mysqlconnection.Close();
+                mysqlconnection.Close();*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-            }
+            
         }
 
         private void Websitetextbox_TextChanged(object sender, EventArgs e)
@@ -179,25 +176,23 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                string EmployeeID = employeeid9textbox.Text;
+                long EmployeeID = Convert.ToInt32(employeeid9textbox.Text);
                 string Coursetype = Coursetypetextbox.Text;
                 int Yearofpass = Convert.ToInt32(yearofpasstextbox.Text);
                 string CourseSpecialization = coursespecializationtextbox.Text;
-                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+             /*   string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
                 mysqlconnection.Open(); string COMMAND = "INSERT INTO EDUCATIONDETAILS(EmployeeID,CourseType,Yearofpass,Coursespecialization)VALUES("+EmployeeID+","+"'" + Coursetype + "'," + "'" + Yearofpass + "'," + "'" + CourseSpecialization + "')";
                 SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
                 cmd.ExecuteNonQuery();
-                mysqlconnection.Close();
+                mysqlconnection.Close();*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-            }
+            
         }
 
       

@@ -23,9 +23,78 @@ namespace pioneerdataaccess
                 cmd.ExecuteNonQuery();
                 mysqlconnection.Close();
             }
-            catch (Exception ex)
+            finally
             {
 
+            }
+
+        }
+        public void SaveCompany(string EmployeeID, string Employeename, long Contactnumber, string Location, string Website)
+        {
+            try
+            {
+                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                    "Integrated Security=True";
+                SqlConnection mysqlconnection = new SqlConnection(connectionstring);
+                mysqlconnection.Open();
+                string COMMAND = "INSERT INTO COMPANY_DETAILS(EmployeeID,Employeename,contactnumber,Location,Website)VALUES(" + EmployeeID + "," + "'" + Employeename + "'," + Contactnumber + "," + "'" + Location + "'," + "'" + Website + "')";
+                SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
+                cmd.ExecuteNonQuery();
+                mysqlconnection.Close();
+            }
+            finally
+            {
+
+            }
+
+        }
+        public void SaveProject(long ProjectID, long EmployeeID, string ProjectName, string ClientName, string Location, string Role)
+        {
+            try
+            {
+
+                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                    "Integrated Security=True";
+                SqlConnection mysqlconnection = new SqlConnection(connectionstring);
+                mysqlconnection.Open();
+                string COMMAND = "INSERT INTO PROJECTDETAILS(ProjectID,EmployeeID,ProjectName,ClientName,Location,Role)VALUES(" + ProjectID + "," + "" + EmployeeID + "," + "'" + ProjectName + "'," + "'" + ClientName + "'," + "'" + Location + "'," + "'" + Role + "')";
+                SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
+                cmd.ExecuteNonQuery();
+                mysqlconnection.Close();
+            }
+            finally
+            {
+
+            }
+        }
+        public void SaveTechnical(long EmployeeID, string UI, string Programminglanguages, string ORMTechnologies, string Databases)
+        {
+            try
+            {
+                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                    "Integrated Security=True";
+                SqlConnection mysqlconnection = new SqlConnection(connectionstring);
+                mysqlconnection.Open(); string COMMAND = "INSERT INTO TECHNICALDETAILS(EmployeeID,UI,ProgrammingLanguages,ORMTechnologies,Databases)VALUES(" + EmployeeID + "," + "'" + UI + "'," + "'" + Programminglanguages + "'," + "'" + ORMTechnologies + "'," + "'" + Databases + "')";
+                SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
+                cmd.ExecuteNonQuery();
+                mysqlconnection.Close();
+            }
+            finally
+            {
+
+            }
+        }
+        public void SaveEducational(long EmployeeID, string Coursetype, long Yearofpass, string CourseSpecialization)
+        {
+            try
+            {
+                string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
+                    "Integrated Security=True";
+                SqlConnection mysqlconnection = new SqlConnection(connectionstring);
+                mysqlconnection.Open(); string COMMAND = "INSERT INTO EDUCATIONDETAILS(EmployeeID,CourseType,Yearofpass,Coursespecialization)VALUES(" + EmployeeID + "," + "'" + Coursetype + "'," + "'" + Yearofpass + "'," + "'" + CourseSpecialization + "')";
+                SqlCommand cmd = new SqlCommand(COMMAND, mysqlconnection);
+                cmd.ExecuteNonQuery();
+                mysqlconnection.Close();
             }
             finally
             {
@@ -33,5 +102,6 @@ namespace pioneerdataaccess
         }
     }
 }
+
 
 
