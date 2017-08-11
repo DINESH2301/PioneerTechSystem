@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pioneertestconsultancysyste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pioneerdataaccess", "pioneerdataaccess\pioneerdataaccess.csproj", "{B80B1B87-C12A-4566-B9F4-876A64124D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech.Model", "PioneerTech.Model\PioneerTech.Model.csproj", "{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech", "PioneerTech.Model\PioneerTech.csproj", "{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
