@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pioneertestconsultancysyste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pioneerdataaccess", "pioneerdataaccess\pioneerdataaccess.csproj", "{B80B1B87-C12A-4566-B9F4-876A64124D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech", "PioneerTech.Model\PioneerTech.csproj", "{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PioneerTech", "PioneerTech\PioneerTech.csproj", "{C8769501-9CBD-4255-A3CF-52DF3AE1C73C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{B80B1B87-C12A-4566-B9F4-876A64124D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B80B1B87-C12A-4566-B9F4-876A64124D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B80B1B87-C12A-4566-B9F4-876A64124D7D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB49B983-1FEC-4524-93D7-DC64ED6E15ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8769501-9CBD-4255-A3CF-52DF3AE1C73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8769501-9CBD-4255-A3CF-52DF3AE1C73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8769501-9CBD-4255-A3CF-52DF3AE1C73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8769501-9CBD-4255-A3CF-52DF3AE1C73C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

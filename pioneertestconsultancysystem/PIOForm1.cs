@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using pioneerdataaccess;
+using PioneerTech;
 namespace pioneertestconsultancysystem
 {
     public partial class Form1 : Form
@@ -32,19 +33,21 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                string Firstname = FirstNametextbox.Text;
-                string Lastname = LastNametextbox.Text;
-                string Email = Emailtextbox.Text;
-                var MobileNumber = Convert.ToInt64(MobileNumbertextbox.Text);
-                long AlternateMobileNumber = Convert.ToInt64(AlternateMobileNumbertextbox.Text);
-                string Address1 = Address1textbox.Text;
-                string Address2 = Address2textbox.Text;
-                string CurrentCountry = CurrentCountrytextbox.Text;
-                string HomeCountry = HomeCountrytextbox.Text;
-                int Zipcode = Convert.ToInt32(Zipcodetextbox.Text);
+                EmployeeDetailsModel emp = new EmployeeDetailsModel();
 
-                EmployeeDataAcessLayer objpioneerdatacees = new EmployeeDataAcessLayer();
-                objpioneerdatacees.SaveEmployee(Firstname,Lastname,Email,MobileNumber,AlternateMobileNumber,Address1,Address2,CurrentCountry,HomeCountry,Zipcode);
+                emp.Firstname = FirstNametextbox.Text;
+                emp.Lastname = LastNametextbox.Text;
+                emp.Email = Emailtextbox.Text;
+                emp.MobileNumber = Convert.ToInt64(MobileNumbertextbox.Text);
+                emp.AlternateMobileNumber = Convert.ToInt64(AlternateMobileNumbertextbox.Text);
+                emp.Address1 = Address1textbox.Text;
+                emp.Address2 = Address2textbox.Text;
+                emp.CurrentCountry = CurrentCountrytextbox.Text;
+                emp.HomeCountry = HomeCountrytextbox.Text;
+                emp.Zipcode = Convert.ToInt32(Zipcodetextbox.Text);
+
+                EmployeeDataAcessLayer objemployeedetails = new EmployeeDataAcessLayer();
+                objemployeedetails.SaveEmployee(emp);
 
                 //string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                 //    "Integrated Security=True";
@@ -83,13 +86,14 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                string EmployeeID = employeeidtextbox10.Text;
-                 string Employeename = Employeenametextbox.Text;
-                var Contactnumber = Convert.ToInt64(contactnumbertextbox.Text);
-                string Location = LocationtextBox.Text;
-                string Website = Websitetextbox.Text;
+                CompanyDetailsModel com = new CompanyDetailsModel();
+                com.EmployeeID = Convert.ToInt32(employeeidtextbox10.Text);
+                 com.Employeename = Employeenametextbox.Text;
+                com.Contactnumber = Convert.ToInt64(contactnumbertextbox.Text);
+                com.Location = LocationtextBox.Text;
+                com.Website = Websitetextbox.Text;
                 EmployeeDataAcessLayer objcompanydetails = new EmployeeDataAcessLayer();
-                objcompanydetails.SaveCompany(EmployeeID, Employeename, Contactnumber, Location, Website);
+                objcompanydetails.SaveCompany(com);
                 /*string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
@@ -110,14 +114,16 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                int ProjectID = Convert.ToInt32(ProjectIDtextBox.Text);
-                int EmployeeID = Convert.ToInt32(EmployeeID1textbox.Text);
-                string ProjectName = ProjectNametextbox.Text;
-                string ClientName = Clientnametextbox.Text;
-                string Location = Location1textbox.Text;
-                string Role = Roletextbox.Text;
+                ProjectDetailsModel pro = new ProjectDetailsModel();
+               
+                pro.ProjectID = Convert.ToInt32(ProjectIDtextBox.Text);
+                pro.EmployeeID = Convert.ToInt32(EmployeeID1textbox.Text);
+                pro.ProjectName = ProjectNametextbox.Text;
+                pro.ClientName = Clientnametextbox.Text;
+                pro.Location = Location1textbox.Text;
+                pro.Role = Roletextbox.Text;
                 EmployeeDataAcessLayer objprojectdetails = new EmployeeDataAcessLayer();
-                objprojectdetails.SaveProject(ProjectID, EmployeeID, ProjectName, ClientName, Location, Role);
+                objprojectdetails.SaveProject(pro);
                 /*string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
@@ -145,13 +151,14 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                int EmployeeID = Convert.ToInt32(EmployeeID5textbox.Text);
-                string UI = UItextbox.Text;
-                string Programminglanguages = programminglanguagestextbox.Text;
-                string ORMTechnologies = ORMtechnologiestextbox.Text;
-                string Databases = databasestextBox.Text;
+                TechnicalDetailsModel tech = new TechnicalDetailsModel();
+                tech.EmployeeID = Convert.ToInt32(EmployeeID5textbox.Text);
+                tech.UI = UItextbox.Text;
+                tech.ProgrammingLanguages = programminglanguagestextbox.Text;
+                tech.ORMTechnologies = ORMtechnologiestextbox.Text;
+                tech.Databases = databasestextBox.Text;
                 EmployeeDataAcessLayer objtechnicaldetails = new EmployeeDataAcessLayer();
-                objtechnicaldetails.SaveTechnical(EmployeeID, UI, Programminglanguages, ORMTechnologies, Databases);
+                objtechnicaldetails.SaveTechnical(tech);
                /* string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
@@ -176,10 +183,13 @@ namespace pioneertestconsultancysystem
         {
             try
             {
-                long EmployeeID = Convert.ToInt32(employeeid9textbox.Text);
-                string Coursetype = Coursetypetextbox.Text;
-                int Yearofpass = Convert.ToInt32(yearofpasstextbox.Text);
-                string CourseSpecialization = coursespecializationtextbox.Text;
+                EducationDetailsModel edu = new EducationDetailsModel();
+                edu.EmployeeID = Convert.ToInt32(employeeid9textbox.Text);
+                edu.Coursetype = Coursetypetextbox.Text;
+                edu.Yearofpass = Convert.ToInt32(yearofpasstextbox.Text);
+                edu.CourseSpecialization = coursespecializationtextbox.Text;
+                EmployeeDataAcessLayer objeducationdetails = new EmployeeDataAcessLayer();
+                objeducationdetails.SaveEducational(edu);
              /*   string connectionstring = @"Data Source=DINESH-COMPUTER\MYSQL;Initial Catalog = pioneerdb;" +
                     "Integrated Security=True";
                 SqlConnection mysqlconnection = new SqlConnection(connectionstring);
